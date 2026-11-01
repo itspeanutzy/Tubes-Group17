@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bekccf1ji72ia"
+path="res://.godot/imported/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg-a83ec7299feb71578b8d46ab52ae83e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg"
+dest_files=["res://.godot/imported/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg-a83ec7299feb71578b8d46ab52ae83e6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

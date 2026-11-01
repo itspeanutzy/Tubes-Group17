@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://yk3df0q1ad1b"]
+
+[ext_resource type="Script" uid="uid://dv5q2ryf0p7bb" path="res://enemy.gd" id="1_1akvt"]
+[ext_resource type="Texture2D" uid="uid://cvtpkpoe5blnh" path="res://DecrepitBones.png" id="2_xm3rc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c0wj"]
+atlas = ExtResource("2_xm3rc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n2kr"]
+atlas = ExtResource("2_xm3rc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3mbw"]
+atlas = ExtResource("2_xm3rc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8q0u"]
+atlas = ExtResource("2_xm3rc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcrgc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c0wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n2kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3mbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8q0u")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_isddv"]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1akvt"]
+radius = 5.0
+height = 16.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1224694256]
+script = ExtResource("1_1akvt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1414013935]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vcrgc")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436140917]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_isddv")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1272212952]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1216926655]
+shape = SubResource("CapsuleShape2D_1akvt")
