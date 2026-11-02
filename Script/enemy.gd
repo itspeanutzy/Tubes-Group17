@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var acceleration := 2000
 @export var health := 50
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
-
+var knockback := Vector2.ZERO
 var player: Node2D = null
 var is_dead = false
 
@@ -17,10 +17,8 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var direction = (player.global_position - global_position).normalized()
-	
-	velocity.x = move_toward(velocity.x, direction.x*SPEED, acceleration * delta)
-	velocity.y = move_toward(velocity.y, direction.y*SPEED, acceleration * delta)
-	
+	knockback = knockback.move_toward(Vector2.ZERO, 600 * delta)
+	velocity = direction * SPEED + knockback
 	move_and_slide()
 	
 	if velocity.length() > 0.1:
@@ -29,9 +27,10 @@ func _physics_process(delta: float) -> void:
 		if velocity.x != 0:
 			animated_sprite_2d.flip_h = velocity.x < 0
 
-func take_damage(amount: int):
+func take_damage(amount: int, knockback_force := Vector2.ZERO):
 	if is_dead : return
 	health -= amount
+	knockback = knockback_force
 	modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	modulate = Color.WHITE
