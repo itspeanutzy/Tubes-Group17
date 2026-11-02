@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dnbqw2apr38cy"]
+
+[ext_resource type="PackedScene" uid="uid://coki0owkgoh26" path="res://Scene/player.tscn" id="1_7sxb4"]
+[ext_resource type="PackedScene" uid="uid://7hxvt6trd84m" path="res://Scene/training_dummy.tscn" id="2_kkp7m"]
+
+[node name="CombatTest" type="Node2D" unique_id=410232320]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=907996312]
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." unique_id=1157810840 instance=ExtResource("1_7sxb4")]
+position = Vector2(-81, 8)
+
+[node name="TrainingDummy" parent="." unique_id=499311587 instance=ExtResource("2_kkp7m")]
+position = Vector2(39, 11)
