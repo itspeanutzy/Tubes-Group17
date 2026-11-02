@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c24cu4ukknoyo"
-path="res://.godot/imported/skull knight-Sheet (1) - Copy.png-f028e87fffed59264d4ef6206fd63f33.ctex"
+uid="uid://b4hy6uvp838d8"
+path="res://.godot/imported/Quit_yellow.png-4f81f8f26f5e736679ab7d9aef384ee2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skull knight-Sheet (1) - Copy.png"
-dest_files=["res://.godot/imported/skull knight-Sheet (1) - Copy.png-f028e87fffed59264d4ef6206fd63f33.ctex"]
+source_file="res://Assets/Sprites/Quit_yellow.png"
+dest_files=["res://.godot/imported/Quit_yellow.png-4f81f8f26f5e736679ab7d9aef384ee2.ctex"]
 
 [params]
 

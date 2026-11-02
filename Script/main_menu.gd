@@ -23,6 +23,6 @@ func _on_quit_pressed():
 
 func _on_fade_timer_timeout():
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://Scene/main.tscn")
 	elif button_type == "options":
-		get_tree().change_scene_to_file("res://options.tscn")
+		get_tree().change_scene_to_file("res://Scene/options.tscn")

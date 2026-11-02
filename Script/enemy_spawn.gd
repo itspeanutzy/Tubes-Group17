@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var enemy_scene: PackedScene
-@export var spawn_interval: float = 2.0
+@export var spawn_interval: float = 3.0
 
 var time_elapsed: float = 0.0
 var player: Node2D

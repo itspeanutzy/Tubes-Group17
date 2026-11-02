@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://suq3jaupepoj"]
 
-[ext_resource type="Script" uid="uid://6nj6xigkqqem" path="res://options.gd" id="1_ao2gm"]
-[ext_resource type="Texture2D" uid="uid://dmlej4a6swuk2" path="res://yapping no game.png" id="2_07a1d"]
-[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://fade_transition.tscn" id="3_p8250"]
+[ext_resource type="Script" uid="uid://6nj6xigkqqem" path="res://Script/options.gd" id="1_ao2gm"]
+[ext_resource type="Texture2D" uid="uid://dmlej4a6swuk2" path="res://Assets/Sprites/yapping no game.png" id="2_07a1d"]
+[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="3_p8250"]
+
 
 [node name="Node" type="Node" unique_id=1903692598]
 script = ExtResource("1_ao2gm")

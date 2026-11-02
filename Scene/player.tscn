@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://coki0owkgoh26"]
 
-[ext_resource type="Script" uid="uid://lay670kxl5rl" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://c24cu4ukknoyo" path="res://skull knight-Sheet (1) - Copy.png" id="2_onrkg"]
-[ext_resource type="AudioStream" uid="uid://dp3abim373ede" path="res://axe-swing-sound-effect_nTQyAM6p.ogg" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://lay670kxl5rl" path="res://Script/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://c24cu4ukknoyo" path="res://Assets/Sprites/skull knight-Sheet (1) - Copy.png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://dp3abim373ede" path="res://Assets/Audio/axe-swing-sound-effect_nTQyAM6p.ogg" id="3_i3pqv"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")

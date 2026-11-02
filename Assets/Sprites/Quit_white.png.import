@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmlej4a6swuk2"
-path="res://.godot/imported/yapping no game.png-c38364064d32d075173f9e1966a5d078.ctex"
+uid="uid://tgfjcps362e"
+path="res://.godot/imported/Quit_white.png-adc44728c7349aeeb0b4368fde3acc7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://yapping no game.png"
-dest_files=["res://.godot/imported/yapping no game.png-c38364064d32d075173f9e1966a5d078.ctex"]
+source_file="res://Assets/Sprites/Quit_white.png"
+dest_files=["res://.godot/imported/Quit_white.png-adc44728c7349aeeb0b4368fde3acc7a.ctex"]
 
 [params]
 

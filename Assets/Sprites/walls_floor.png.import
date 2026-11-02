@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tgfjcps362e"
-path="res://.godot/imported/Quit_white.png-d59112001bf4f5a44d85742ca38cfcbb.ctex"
+uid="uid://dr00xudt6weeo"
+path="res://.godot/imported/walls_floor.png-8ca1bbf2cd37a5eace467adb5952ee70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Quit_white.png"
-dest_files=["res://.godot/imported/Quit_white.png-d59112001bf4f5a44d85742ca38cfcbb.ctex"]
+source_file="res://Assets/Sprites/walls_floor.png"
+dest_files=["res://.godot/imported/walls_floor.png-8ca1bbf2cd37a5eace467adb5952ee70.ctex"]
 
 [params]
 
