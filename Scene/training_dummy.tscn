@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://7hxvt6trd84m"]
+
+[ext_resource type="Texture2D" uid="uid://1nxrdfnhump1" path="res://icon.svg" id="1_g4hsh"]
+[ext_resource type="Script" uid="uid://bqblnc70s1y8c" path="res://Script/training_dummy.gd" id="1_s3jae"]
+[ext_resource type="Script" uid="uid://561o533d5vjq" path="res://Script/stun_gauge.gd" id="3_qedlj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uj04i"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5viw"]
+radius = 24.0
+
+[node name="TrainingDummy" type="CharacterBody2D" unique_id=499311587]
+script = ExtResource("1_s3jae")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1110518382]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_g4hsh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821694158]
+shape = SubResource("CircleShape2D_uj04i")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1687518491]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1417958289]
+shape = SubResource("CircleShape2D_p5viw")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=506115452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1007711213]
+shape = SubResource("CircleShape2D_p5viw")
+
+[node name="StunGauge" type="Node" parent="." unique_id=1453953060]
+script = ExtResource("3_qedlj")
+metadata/_custom_type_script = "uid://561o533d5vjq"

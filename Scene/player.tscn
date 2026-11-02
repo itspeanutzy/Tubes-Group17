@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://lay670kxl5rl" path="res://Script/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c24cu4ukknoyo" path="res://Assets/Sprites/skull knight-Sheet (1) - Copy.png" id="2_onrkg"]
 [ext_resource type="AudioStream" uid="uid://dp3abim373ede" path="res://Assets/Audio/axe-swing-sound-effect_nTQyAM6p.ogg" id="3_i3pqv"]
-
+[ext_resource type="Script" uid="uid://561o533d5vjq" path="res://Script/stun_gauge.gd" id="4_58ae2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
@@ -290,7 +290,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dw050")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_down",
 "speed": 6.0
 }, {
@@ -313,7 +313,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bwjto")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_side",
 "speed": 6.0
 }, {
@@ -336,7 +336,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pbfsw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_up",
 "speed": 6.0
 }, {
@@ -359,7 +359,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7hik5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -382,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_efrwb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -405,7 +405,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b88wv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -428,7 +428,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qwsg1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }, {
@@ -451,7 +451,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fddr8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 8.0
 }, {
@@ -474,7 +474,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b4uyv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 8.0
 }, {
@@ -497,7 +497,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h6w8y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 8.0
 }, {
@@ -520,7 +520,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kh4g0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 8.0
 }]
@@ -533,17 +533,14 @@ height = 10.0
 radius = 3.0
 height = 10.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(18.5625, 21)
-
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1157810840]
+[node name="Player" type="CharacterBody2D" unique_id=1157810840]
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=810182600]
 texture_filter = 1
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_m6nxt")
-animation = &"walk_up"
+animation = &"attack_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2036948996]
 position = Vector2(-1, 1)
@@ -558,9 +555,20 @@ shape = SubResource("CapsuleShape2D_onrkg")
 [node name="Hitbox" type="Area2D" parent="." unique_id=2100669769]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1931919035]
-position = Vector2(12, 1)
-shape = SubResource("RectangleShape2D_onrkg")
+[node name="ArcShape" type="CollisionPolygon2D" parent="Hitbox" unique_id=761918026]
+polygon = PackedVector2Array(4, -18, -9, -8, 2, 0, -9, 8, 4, 18, 18, 14, 25, 0, 18, -14)
+
+[node name="SlashShape" type="CollisionPolygon2D" parent="Hitbox" unique_id=614580785]
+polygon = PackedVector2Array(-5, -8, -5, 8, 44, 8, 44, -8)
+
+[node name="ComboTimer" type="Timer" parent="." unique_id=1180243020]
+wait_time = 0.6
+one_shot = true
+
+[node name="DodgeCooldown" type="Timer" parent="." unique_id=966656890]
+one_shot = true
+
+[node name="GuardCooldown" type="Timer" parent="." unique_id=1128506978]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=649342058]
 zoom = Vector2(2.5, 2.5)
@@ -572,6 +580,10 @@ limit_bottom = 480
 [node name="SwingSound" type="AudioStreamPlayer2D" parent="." unique_id=17163637]
 stream = ExtResource("3_i3pqv")
 bus = &"SFX"
+
+[node name="StunGauge" type="Node" parent="." unique_id=779660110]
+script = ExtResource("4_58ae2")
+metadata/_custom_type_script = "uid://561o533d5vjq"
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

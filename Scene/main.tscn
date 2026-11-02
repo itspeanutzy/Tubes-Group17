@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ds7mlepr7j2v1" path="res://Script/quittomenu.gd" id="5_272bh"]
 [ext_resource type="AudioStream" uid="uid://bekccf1ji72ia" path="res://Assets/Audio/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://7hxvt6trd84m" path="res://Scene/training_dummy.tscn" id="8_75buv"]
 
 [node name="Node" type="Node" unique_id=1804956798]
 
@@ -47,5 +48,8 @@ text = "To Menu"
 stream = ExtResource("5_lquwl")
 autoplay = true
 bus = &"BGM"
+
+[node name="TrainingDummy" parent="." unique_id=499311587 instance=ExtResource("8_75buv")]
+position = Vector2(488, 251)
 
 [connection signal="pressed" from="GUI/CanvasLayer/Control/quitmenu" to="GUI" method="_on_quitmenu_pressed"]
