@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c1t4xakg5secw"]
 
-[ext_resource type="Texture2D" uid="uid://dmlej4a6swuk2" path="res://yapping no game.png" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://c3pqmhgg2fa6m" path="res://main_menu.gd" id="1_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://bh0htari682gn" path="res://Start_white.png" id="2_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://b6v8jvpm6ujon" path="res://Start_yellow.png" id="3_qe12f"]
-[ext_resource type="Texture2D" uid="uid://dus2w3k7mt5w7" path="res://Options_white.png" id="4_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://0267s5vondnf" path="res://Options_yellow.png" id="5_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://tgfjcps362e" path="res://Quit_white.png" id="6_0o4t1"]
-[ext_resource type="Texture2D" uid="uid://b4hy6uvp838d8" path="res://Quit_yellow.png" id="7_0k4wn"]
-[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://fade_transition.tscn" id="9_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://dmlej4a6swuk2" path="res://Assets/Sprites/yapping no game.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://c3pqmhgg2fa6m" path="res://Script/main_menu.gd" id="1_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://bh0htari682gn" path="res://Assets/Sprites/Start_white.png" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://b6v8jvpm6ujon" path="res://Assets/Sprites/Start_yellow.png" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://dus2w3k7mt5w7" path="res://Assets/Sprites/Options_white.png" id="4_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://0267s5vondnf" path="res://Assets/Sprites/Options_yellow.png" id="5_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://tgfjcps362e" path="res://Assets/Sprites/Quit_white.png" id="6_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://b4hy6uvp838d8" path="res://Assets/Sprites/Quit_yellow.png" id="7_0k4wn"]
+[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="9_0o4t1"]
 
 [node name="Node" type="Node" unique_id=1445231531]
 script = ExtResource("1_dy7ct")

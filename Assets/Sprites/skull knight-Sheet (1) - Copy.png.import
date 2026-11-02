@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh0htari682gn"
-path="res://.godot/imported/Start_white.png-29bc21c54e2f98a24f60b5c2c8ac49c0.ctex"
+uid="uid://c24cu4ukknoyo"
+path="res://.godot/imported/skull knight-Sheet (1) - Copy.png-c213055d386ef4027af1c20543395814.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Start_white.png"
-dest_files=["res://.godot/imported/Start_white.png-29bc21c54e2f98a24f60b5c2c8ac49c0.ctex"]
+source_file="res://Assets/Sprites/skull knight-Sheet (1) - Copy.png"
+dest_files=["res://.godot/imported/skull knight-Sheet (1) - Copy.png-c213055d386ef4027af1c20543395814.ctex"]
 
 [params]
 
