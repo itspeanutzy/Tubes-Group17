@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dv5q2ryf0p7bb" path="res://Script/enemy.gd" id="1_1akvt"]
 [ext_resource type="Texture2D" uid="uid://cvtpkpoe5blnh" path="res://DecrepitBones.png" id="2_xm3rc"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3c0wj"]
 atlas = ExtResource("2_xm3rc")
 region = Rect2(0, 0, 16, 16)
@@ -35,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u8q0u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 5.0
 }]
