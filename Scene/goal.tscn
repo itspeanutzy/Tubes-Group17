@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8m88su61chxn"]
+
+[ext_resource type="Script" uid="uid://srwkayfv7em8" path="res://Script/goal.gd" id="1_ifj1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjgdg"]
+
+[node name="Goal" type="Area2D" unique_id=1541156368]
+script = ExtResource("1_ifj1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857354271]
+shape = SubResource("RectangleShape2D_bjgdg")
