@@ -4,10 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://dnp207o0s7jne" path="res://Scene/magic_orb.tscn" id="2_5rm4b"]
 [ext_resource type="PackedScene" uid="uid://cll8ojbitygul" path="res://Scene/fire_hazard.tscn" id="3_5rm4b"]
 [ext_resource type="Texture2D" uid="uid://1nxrdfnhump1" path="res://icon.svg" id="3_q66jx"]
+[ext_resource type="Script" uid="uid://561o533d5vjq" path="res://Script/stun_gauge.gd" id="5_q66jx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjgdg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sgnvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uj04i"]
+radius = 20.0
 
 [node name="RangedEnemy" type="CharacterBody2D" unique_id=1546509261]
 motion_mode = 1
@@ -27,3 +31,13 @@ shape = SubResource("CircleShape2D_bjgdg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=364876059]
 shape = SubResource("CircleShape2D_sgnvs")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1050308597]
+
+[node name="SlashShape" type="CollisionShape2D" parent="Hitbox" unique_id=1208494628]
+position = Vector2(24, 0)
+shape = SubResource("CircleShape2D_uj04i")
+debug_color = Color(0.80582994, 0.40337756, 0.28330836, 0.41960785)
+
+[node name="StunGauge" type="Node" parent="." unique_id=1176621744]
+script = ExtResource("5_q66jx")
