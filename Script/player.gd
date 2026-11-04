@@ -319,6 +319,8 @@ func hit_stop(duration: float) -> void:
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if is_invulnerable():
 		return
+	if body.is_in_group("NoContactDamage"):
+		return   # musuh jarak jauh tidak melukai lewat sentuhan
 	if body.is_in_group("Enemy"):
 		health -= 10
 		animated_sprite_2d.modulate = Color.RED

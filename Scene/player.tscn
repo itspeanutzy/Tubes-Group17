@@ -570,13 +570,6 @@ one_shot = true
 
 [node name="GuardCooldown" type="Timer" parent="." unique_id=1128506978]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=649342058]
-zoom = Vector2(2.5, 2.5)
-limit_left = 0
-limit_top = 0
-limit_right = 720
-limit_bottom = 480
-
 [node name="SwingSound" type="AudioStreamPlayer2D" parent="." unique_id=17163637]
 stream = ExtResource("3_i3pqv")
 bus = &"SFX"
