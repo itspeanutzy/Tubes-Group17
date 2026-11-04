@@ -20,9 +20,8 @@ func _on_options_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
-
 func _on_fade_timer_timeout():
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://Scene/main.tscn")
+		GameManager.start_game()
 	elif button_type == "options":
 		get_tree().change_scene_to_file("res://Scene/options.tscn")

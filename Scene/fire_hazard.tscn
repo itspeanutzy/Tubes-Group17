@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cll8ojbitygul"]
+
+[ext_resource type="Script" uid="uid://cw2bfnthd7nwy" path="res://Script/fire_hazard.gd" id="1_cvmlu"]
+
+[node name="FireHazard" type="Area2D" unique_id=272953849]
+script = ExtResource("1_cvmlu")

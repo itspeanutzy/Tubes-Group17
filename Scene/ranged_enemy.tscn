@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cgd2tmh0dxkcv"]
+
+[ext_resource type="Script" uid="uid://cj0rempfkg8iy" path="res://Script/ranged_enemy.gd" id="1_q06ob"]
+[ext_resource type="PackedScene" uid="uid://dnp207o0s7jne" path="res://Scene/magic_orb.tscn" id="2_5rm4b"]
+[ext_resource type="PackedScene" uid="uid://cll8ojbitygul" path="res://Scene/fire_hazard.tscn" id="3_5rm4b"]
+[ext_resource type="Texture2D" uid="uid://1nxrdfnhump1" path="res://icon.svg" id="3_q66jx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjgdg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgnvs"]
+
+[node name="RangedEnemy" type="CharacterBody2D" unique_id=1546509261]
+motion_mode = 1
+script = ExtResource("1_q06ob")
+orb_scene = ExtResource("2_5rm4b")
+fire_scene = ExtResource("3_5rm4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1065025896]
+position = Vector2(-4.7683716e-07, -9.536743e-07)
+scale = Vector2(0.15234375, 0.16015625)
+texture = ExtResource("3_q66jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=170057550]
+shape = SubResource("CircleShape2D_bjgdg")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1944762987]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=364876059]
+shape = SubResource("CircleShape2D_sgnvs")

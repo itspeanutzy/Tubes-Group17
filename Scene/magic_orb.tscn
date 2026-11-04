@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnp207o0s7jne"]
+
+[ext_resource type="Script" uid="uid://cufokxj83ptd" path="res://Script/magic_orb.gd" id="1_vu71n"]
+
+[node name="MagicOrb" type="Area2D" unique_id=152756867]
+script = ExtResource("1_vu71n")

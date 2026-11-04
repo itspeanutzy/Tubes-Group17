@@ -41,6 +41,10 @@ offset_bottom = 41.0
 text = "To Menu"
 
 [node name="FadeTransition" parent="GUI" unique_id=301525587 instance=ExtResource("6_5vw27")]
+offset_left = 104.0
+offset_top = 4.0
+offset_right = 1260.0
+offset_bottom = 655.0
 
 [node name="Fade_Timer" type="Timer" parent="GUI/FadeTransition" unique_id=750706879]
 
