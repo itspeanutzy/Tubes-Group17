@@ -4,7 +4,7 @@ signal died
 
 @export var SPEED := 20
 @export var acceleration := 2000
-@export var health := 50
+@export var health := 40
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 var knockback := Vector2.ZERO
 var player: Node2D = null

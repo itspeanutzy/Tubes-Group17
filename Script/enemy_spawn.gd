@@ -7,6 +7,7 @@ var time_elapsed: float = 0.0
 var player: Node2D
 
 func _ready():
+	add_to_group("EnemySpawner")
 	player = get_tree().get_first_node_in_group("Player")
 
 func _process(delta: float) -> void:

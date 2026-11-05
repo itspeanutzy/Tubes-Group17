@@ -5,10 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://bh0htari682gn" path="res://Assets/Sprites/Start_white.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://b6v8jvpm6ujon" path="res://Assets/Sprites/Start_yellow.png" id="3_qe12f"]
 [ext_resource type="Texture2D" uid="uid://dus2w3k7mt5w7" path="res://Assets/Sprites/Options_white.png" id="4_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://c6grtq26tmtym" path="res://Assets/Sprites/IMG_20261106_014136.png" id="5_47k5r"]
 [ext_resource type="Texture2D" uid="uid://0267s5vondnf" path="res://Assets/Sprites/Options_yellow.png" id="5_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://tgfjcps362e" path="res://Assets/Sprites/Quit_white.png" id="6_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://dyc3ap463ct6q" path="res://Assets/Sprites/IMG_20261106_014206.png" id="6_hag5k"]
 [ext_resource type="Texture2D" uid="uid://b4hy6uvp838d8" path="res://Assets/Sprites/Quit_yellow.png" id="7_0k4wn"]
 [ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="9_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://cnpxa33gxtcut" path="res://Assets/Audio/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music.ogg" id="10_yok32"]
 
 [node name="Node" type="Node" unique_id=1445231531]
 script = ExtResource("1_dy7ct")
@@ -26,31 +29,42 @@ offset_bottom = 40.0
 
 [node name="start" type="TextureButton" parent="Button_Manager" unique_id=1442834806]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 242.0
-offset_right = 1149.0
-offset_bottom = 408.0
+offset_left = 394.0
+offset_top = 227.0
+offset_right = 1150.0
+offset_bottom = 393.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_fu7sn")
 texture_hover = ExtResource("3_qe12f")
 stretch_mode = 0
 
+[node name="load" type="TextureButton" parent="Button_Manager" unique_id=1214071402]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 298.0
+offset_right = 1153.0
+offset_bottom = 464.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_47k5r")
+texture_hover = ExtResource("6_hag5k")
+stretch_mode = 0
+
 [node name="options" type="TextureButton" parent="Button_Manager" unique_id=245515552]
 layout_mode = 0
-offset_left = 470.00003
-offset_top = 336.0
-offset_right = 1049.0
-offset_bottom = 516.0
+offset_left = 468.0
+offset_top = 371.0
+offset_right = 1047.0
+offset_bottom = 551.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("4_8qtwp")
 texture_hover = ExtResource("5_dy7ct")
 
 [node name="quit" type="TextureButton" parent="Button_Manager" unique_id=1633377893]
 layout_mode = 0
-offset_left = 507.0
-offset_top = 398.0
-offset_right = 892.0
-offset_bottom = 625.0
+offset_left = 505.99997
+offset_top = 428.0
+offset_right = 891.0
+offset_bottom = 655.0
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("6_0o4t1")
 texture_hover = ExtResource("7_0k4wn")
@@ -60,7 +74,13 @@ visible = false
 
 [node name="FadeTimer" type="Timer" parent="FadeTransition" unique_id=403651892]
 
+[node name="BGMMenu" type="AudioStreamPlayer2D" parent="." unique_id=2112078261]
+stream = ExtResource("10_yok32")
+autoplay = true
+bus = &"BGM"
+
 [connection signal="pressed" from="Button_Manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Button_Manager/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_Manager/quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="FadeTransition/FadeTimer" to="." method="_on_fade_timer_timeout"]

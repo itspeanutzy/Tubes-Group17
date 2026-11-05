@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvcei4x5ejwu4"
+path="res://.godot/imported/Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music.ogg-14c7a36ab34ad225335cfafdb5d6be5c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music.ogg"
+dest_files=["res://.godot/imported/Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music.ogg-14c7a36ab34ad225335cfafdb5d6be5c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
