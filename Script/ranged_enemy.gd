@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 enum State { IDLE, COMBAT, CAST, PUNCH, RECOVER, STUN }
 
 const PUNCH_WINDUP := 0.35
@@ -283,6 +285,7 @@ func take_hit(damage: int, stun_power: float, knockback_force: Vector2, _attacke
 	create_tween().tween_property(self, "modulate", Color.WHITE, 0.15)
 
 	if health <= 0:
+		died.emit()
 		queue_free()
 		return
 
