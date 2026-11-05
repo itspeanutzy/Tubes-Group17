@@ -21,7 +21,5 @@ func spawn_enemy():
 	if enemy_scene == null: return
 	
 	var enemy = enemy_scene.instantiate()
-	
-	enemy.global_position = global_position
-	
 	add_child(enemy)
+	enemy.global_position = global_position
