@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ju5ufbr3s4gf" path="res://Assets/Sprites/Quit to Menu_white.png" id="6_evyvo"]
 [ext_resource type="Texture2D" uid="uid://cybcs8wdu5fa8" path="res://Assets/Sprites/Quit to Menu_yellow.png" id="7_pr4gf"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1540682482]
+[node name="PauseMenu" type="CanvasLayer" unique_id=1540682482]
 process_mode = 3
 script = ExtResource("1_nkw6i")
 
