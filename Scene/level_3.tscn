@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bekccf1ji72ia" path="res://Assets/Audio/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg" id="5_3a2ac"]
 [ext_resource type="Script" uid="uid://bh3vg8tagejiu" path="res://Script/boss_victory.gd" id="5_c5qca"]
 [ext_resource type="PackedScene" uid="uid://cgd2tmh0dxkcv" path="res://Scene/ranged_enemy.tscn" id="6_3a2ac"]
+[ext_resource type="Script" uid="uid://dvog4n31bd6yg" path="res://Script/level_title.gd" id="6_k8ar7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufara"]
 texture = ExtResource("1_wjlks")
@@ -556,3 +557,6 @@ boss = NodePath("../RangedEnemy")
 stream = ExtResource("5_3a2ac")
 autoplay = true
 bus = &"BGM"
+
+[node name="LevelTitle" type="Node" parent="." unique_id=1674702048]
+script = ExtResource("6_k8ar7")
