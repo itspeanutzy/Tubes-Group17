@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ccrop3lgky4qy" path="res://Script/enemy_spawn.gd" id="5_43cbn"]
 [ext_resource type="PackedScene" uid="uid://yk3df0q1ad1b" path="res://Scene/bones_enemy.tscn" id="6_2thg8"]
 [ext_resource type="AudioStream" uid="uid://bekccf1ji72ia" path="res://Assets/Audio/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg" id="7_43cbn"]
+[ext_resource type="Script" uid="uid://dvog4n31bd6yg" path="res://Script/level_title.gd" id="8_2thg8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufara"]
 texture = ExtResource("1_yiryk")
@@ -529,7 +530,7 @@ sources/0 = SubResource("TileSetAtlasSource_ufara")
 
 [node name="Level2" type="Node2D" unique_id=377059863 node_paths=PackedStringArray("gate_layer")]
 script = ExtResource("1_a5oyc")
-kills_required = 1
+kills_required = 15
 gate_layer = NodePath("TileMapLayer")
 gate_cells = Array[Vector2i]([Vector2i(14, -3), Vector2i(15, -3), Vector2i(14, -4), Vector2i(15, -4)])
 open_atlas_coords = Array[Vector2i]([Vector2i(6, 10), Vector2i(7, 10), Vector2i(11, 8), Vector2i(12, 8)])
@@ -556,3 +557,8 @@ enemy_scene = ExtResource("6_2thg8")
 stream = ExtResource("7_43cbn")
 autoplay = true
 bus = &"BGM"
+
+[node name="LevelTitle" type="Node" parent="." unique_id=1615384922]
+script = ExtResource("8_2thg8")
+title_text = "Level 2
+Kills 15 Bones"
