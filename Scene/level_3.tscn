@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dr00xudt6weeo" path="res://Assets/Sprites/walls_floor.png" id="1_wjlks"]
 [ext_resource type="PackedScene" uid="uid://coki0owkgoh26" path="res://Scene/player.tscn" id="2_7x2t2"]
 [ext_resource type="PackedScene" uid="uid://8m88su61chxn" path="res://Scene/goal.tscn" id="3_c5qca"]
-[ext_resource type="Script" uid="uid://ds7mlepr7j2v1" path="res://Script/quittomenu.gd" id="4_c5qca"]
-[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="5_3a2ac"]
 [ext_resource type="PackedScene" uid="uid://cgd2tmh0dxkcv" path="res://Scene/ranged_enemy.tscn" id="6_3a2ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufara"]
@@ -541,33 +539,6 @@ zoom = Vector2(2.45, 2.45)
 [node name="Goal" parent="." unique_id=1541156368 instance=ExtResource("3_c5qca")]
 position = Vector2(0, -248)
 
-[node name="GUI" type="Node" parent="." unique_id=454022890]
-script = ExtResource("4_c5qca")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GUI" unique_id=995417179]
-
-[node name="Control" type="Control" parent="GUI/CanvasLayer" unique_id=1839417184]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="quitmenu" type="Button" parent="GUI/CanvasLayer/Control" unique_id=903570231]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 83.0
-offset_bottom = 41.0
-text = "To Menu"
-
-[node name="FadeTransition" parent="GUI" unique_id=301525587 instance=ExtResource("5_3a2ac")]
-offset_left = 104.0
-offset_top = 4.0
-offset_right = 1260.0
-offset_bottom = 655.0
-
-[node name="Fade_Timer" type="Timer" parent="GUI/FadeTransition" unique_id=747236682]
-
 [node name="RangedEnemy" parent="." unique_id=1546509261 instance=ExtResource("6_3a2ac")]
 position = Vector2(2, -38)
 
@@ -578,5 +549,3 @@ position = Vector2(-250, -171)
 
 [node name="BottomRight" type="Marker2D" parent="ArenaBounds" unique_id=1698055751]
 position = Vector2(251, 253)
-
-[connection signal="pressed" from="GUI/CanvasLayer/Control/quitmenu" to="GUI" method="_on_quitmenu_pressed"]

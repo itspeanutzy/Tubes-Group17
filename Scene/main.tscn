@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://coki0owkgoh26" path="res://Scene/player.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://ccrop3lgky4qy" path="res://Script/enemy_spawn.gd" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://yk3df0q1ad1b" path="res://Scene/bones_enemy.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://ds7mlepr7j2v1" path="res://Script/quittomenu.gd" id="5_272bh"]
 [ext_resource type="AudioStream" uid="uid://bekccf1ji72ia" path="res://Assets/Audio/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://7hxvt6trd84m" path="res://Scene/training_dummy.tscn" id="8_75buv"]
 
 [node name="Node" type="Node" unique_id=1804956798]
@@ -21,33 +19,6 @@ position = Vector2(122, 148)
 script = ExtResource("3_h2yge")
 enemy_scene = ExtResource("4_1bvp3")
 
-[node name="GUI" type="Node" parent="." unique_id=462421411]
-script = ExtResource("5_272bh")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GUI" unique_id=594451248]
-
-[node name="Control" type="Control" parent="GUI/CanvasLayer" unique_id=636440828]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="quitmenu" type="Button" parent="GUI/CanvasLayer/Control" unique_id=1858783618]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 83.0
-offset_bottom = 41.0
-text = "To Menu"
-
-[node name="FadeTransition" parent="GUI" unique_id=301525587 instance=ExtResource("6_5vw27")]
-offset_left = 104.0
-offset_top = 4.0
-offset_right = 1260.0
-offset_bottom = 655.0
-
-[node name="Fade_Timer" type="Timer" parent="GUI/FadeTransition" unique_id=750706879]
-
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1846151412]
 stream = ExtResource("5_lquwl")
 autoplay = true
@@ -55,5 +26,3 @@ bus = &"BGM"
 
 [node name="TrainingDummy" parent="." unique_id=499311587 instance=ExtResource("8_75buv")]
 position = Vector2(488, 251)
-
-[connection signal="pressed" from="GUI/CanvasLayer/Control/quitmenu" to="GUI" method="_on_quitmenu_pressed"]

@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dr00xudt6weeo" path="res://Assets/Sprites/walls_floor.png" id="1_5exfe"]
 [ext_resource type="PackedScene" uid="uid://coki0owkgoh26" path="res://Scene/player.tscn" id="2_6544n"]
 [ext_resource type="PackedScene" uid="uid://8m88su61chxn" path="res://Scene/goal.tscn" id="3_poeaa"]
-[ext_resource type="Script" uid="uid://ds7mlepr7j2v1" path="res://Script/quittomenu.gd" id="3_ufara"]
-[ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="4_ws63c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufara"]
 texture = ExtResource("1_5exfe")
@@ -539,32 +537,3 @@ zoom = Vector2(4, 4)
 
 [node name="Goal" parent="." unique_id=1541156368 instance=ExtResource("3_poeaa")]
 position = Vector2(240, -104)
-
-[node name="GUI" type="Node" parent="." unique_id=486655245]
-script = ExtResource("3_ufara")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="GUI" unique_id=1955440330]
-
-[node name="Control" type="Control" parent="GUI/CanvasLayer" unique_id=2061388838]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="quitmenu" type="Button" parent="GUI/CanvasLayer/Control" unique_id=1652783312]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 83.0
-offset_bottom = 41.0
-text = "To Menu"
-
-[node name="FadeTransition" parent="GUI" unique_id=301525587 instance=ExtResource("4_ws63c")]
-offset_left = 104.0
-offset_top = 4.0
-offset_right = 1260.0
-offset_bottom = 655.0
-
-[node name="Fade_Timer" type="Timer" parent="GUI/FadeTransition" unique_id=74571956]
-
-[connection signal="pressed" from="GUI/CanvasLayer/Control/quitmenu" to="GUI" method="_on_quitmenu_pressed"]

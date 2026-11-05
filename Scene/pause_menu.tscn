@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dwgy65eksrt2a"]
+
+[ext_resource type="Script" uid="uid://bs4ov0qf2de6w" path="res://pause_menu.gd" id="1_nkw6i"]
+[ext_resource type="Texture2D" uid="uid://dxs3fsdcpaxvp" path="res://Assets/Sprites/Resume_white.png" id="2_c7fen"]
+[ext_resource type="Texture2D" uid="uid://bjtsqhs5f4wja" path="res://Assets/Sprites/Resume_yellow.png" id="3_vpppi"]
+[ext_resource type="Texture2D" uid="uid://dugrrd1a4p1rg" path="res://Assets/Sprites/Save Game_white.png" id="4_1eq5e"]
+[ext_resource type="Texture2D" uid="uid://wx4knrp1itxv" path="res://Assets/Sprites/Save Game_yellow.png" id="5_yk0kx"]
+[ext_resource type="Texture2D" uid="uid://ju5ufbr3s4gf" path="res://Assets/Sprites/Quit to Menu_white.png" id="6_evyvo"]
+[ext_resource type="Texture2D" uid="uid://cybcs8wdu5fa8" path="res://Assets/Sprites/Quit to Menu_yellow.png" id="7_pr4gf"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1540682482]
+process_mode = 3
+script = ExtResource("1_nkw6i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1984704431]
+offset_right = 1152.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="Button_Manager" type="Control" parent="." unique_id=1280457727]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="TextureButton" parent="Button_Manager" unique_id=676552706]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 229.0
+offset_right = 961.0
+offset_bottom = 357.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_c7fen")
+texture_hover = ExtResource("3_vpppi")
+
+[node name="Save_Game" type="TextureButton" parent="Button_Manager" unique_id=12792641]
+layout_mode = 0
+offset_left = 411.00003
+offset_top = 280.00003
+offset_right = 1172.0
+offset_bottom = 447.00003
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_1eq5e")
+texture_hover = ExtResource("5_yk0kx")
+
+[node name="Quit_to_Menu" type="TextureButton" parent="Button_Manager" unique_id=1848961637]
+layout_mode = 0
+offset_left = 380.99997
+offset_top = 334.99997
+offset_right = 1352.0
+offset_bottom = 515.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_evyvo")
+texture_hover = ExtResource("7_pr4gf")
+
+[connection signal="pressed" from="Button_Manager/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Button_Manager/Save_Game" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="Button_Manager/Quit_to_Menu" to="." method="_on_quit_to_menu_pressed"]
