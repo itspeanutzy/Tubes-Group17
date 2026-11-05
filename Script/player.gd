@@ -56,6 +56,8 @@ func _ready():
 	stun_gauge.stunned.connect(_on_stunned)
 	guard_cooldown.one_shot = true
 	Engine.time_scale = 1.0
+	health = Savemanager.player_health
+	
 #Sprite Animation
 func update_sprite_direction(input:Vector2) -> void:
 	match input:
@@ -302,6 +304,7 @@ func _block(damage: int, stun_power: float, knockback_force: Vector2) -> void:
 
 func _apply_damage(amount: int) -> void:
 	health -= amount
+	Savemanager.player_health = health
 	print("player hp: ", health)
 	if health <= 0:
 		is_dead = true
@@ -323,6 +326,7 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		return   # musuh jarak jauh tidak melukai lewat sentuhan
 	if body.is_in_group("Enemy"):
 		health -= 10
+		Savemanager.player_health = health
 		animated_sprite_2d.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		animated_sprite_2d.modulate = Color.WHITE
