@@ -24,6 +24,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 
 func _on_back_pressed() -> void:
+	Savemanager.save_game() 
 	button_type = "back"
 	$FadeTransition.show()
 	$FadeTransition/FadeTimer.start()

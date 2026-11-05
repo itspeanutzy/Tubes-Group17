@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhdg0fsnp2uim"]
+
+[ext_resource type="Script" uid="uid://dmn26nbdx1pvb" path="res://hud.gd" id="1_cevek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmoiy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3quw2"]
+bg_color = Color(0.30877995, 0.6749527, 9.62615e-07, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1297638002]
+process_mode = 3
+script = ExtResource("1_cevek")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1543416497]
+offset_right = 417.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_fmoiy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3quw2")
+max_value = 200.0
