@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8m88su61chxn" path="res://Scene/goal.tscn" id="3_poeaa"]
 [ext_resource type="Script" uid="uid://ccrop3lgky4qy" path="res://Script/enemy_spawn.gd" id="5_ufara"]
 [ext_resource type="PackedScene" uid="uid://yk3df0q1ad1b" path="res://Scene/bones_enemy.tscn" id="6_ws63c"]
-[ext_resource type="AudioStream" uid="uid://bekccf1ji72ia" path="res://Assets/Audio/【ボカロファミコン風】テトリス _ 重音テトSV【Chiptuneアレンジ】.ogg" id="7_ws63c"]
+[ext_resource type="AudioStream" uid="uid://dvcei4x5ejwu4" path="res://Assets/Audio/Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music.ogg" id="7_3rcer"]
 [ext_resource type="Script" uid="uid://dvog4n31bd6yg" path="res://Script/level_title.gd" id="8_3rcer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufara"]
@@ -553,7 +553,7 @@ script = ExtResource("5_ufara")
 enemy_scene = ExtResource("6_ws63c")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=88400292]
-stream = ExtResource("7_ws63c")
+stream = ExtResource("7_3rcer")
 autoplay = true
 bus = &"BGM"
 

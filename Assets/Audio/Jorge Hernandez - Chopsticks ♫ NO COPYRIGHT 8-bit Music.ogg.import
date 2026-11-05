@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnpxa33gxtcut"
+path="res://.godot/imported/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music.ogg-3a67669af09353670edc268a91671b07.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music.ogg"
+dest_files=["res://.godot/imported/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music.ogg-3a67669af09353670edc268a91671b07.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

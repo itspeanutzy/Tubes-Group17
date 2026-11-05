@@ -50,9 +50,13 @@ func _open_gate() -> void:
 	print("[Controller] membuka gerbang. gate_cells=", gate_cells, " atlas=", open_atlas_coords)
 	_opened = true
 
-	# Ganti tiap sel dengan tile pasangannya
 	for i in gate_cells.size():
 		var atlas: Vector2i = open_atlas_coords[i]
 		gate_layer.set_cell(gate_cells[i], open_source_id, atlas)
 
 	gate_opened.emit()
+	
+	for spawner in get_tree().get_nodes_in_group("EnemySpawner"):
+		spawner.queue_free()
+		
+	print("Gerbang terbuka, Spawner dimatikan!")

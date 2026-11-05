@@ -11,6 +11,9 @@ func _on_start_pressed():
 	$FadeTransition/FadeTimer.start()
 	$FadeTransition/AnimationPlayer.play("fade_in")
 
+func _on_load_pressed() -> void:
+	Savemanager.load_game()
+
 func _on_options_pressed():
 	button_type = "options"
 	$FadeTransition.show()

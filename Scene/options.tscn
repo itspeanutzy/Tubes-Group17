@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://6nj6xigkqqem" path="res://Script/options.gd" id="1_ao2gm"]
 [ext_resource type="Texture2D" uid="uid://dmlej4a6swuk2" path="res://Assets/Sprites/yapping no game.png" id="2_07a1d"]
 [ext_resource type="PackedScene" uid="uid://lj0wtepx4cg1" path="res://Scene/fade_transition.tscn" id="3_p8250"]
-
+[ext_resource type="AudioStream" uid="uid://cnpxa33gxtcut" path="res://Assets/Audio/Jorge Hernandez - Chopsticks ♫ NO COPYRIGHT 8-bit Music.ogg" id="4_nvoj8"]
 
 [node name="Node" type="Node" unique_id=1903692598]
 script = ExtResource("1_ao2gm")
@@ -59,6 +59,12 @@ offset_bottom = 480.0
 max_value = 1.0
 step = 0.05
 value = 1.0
+
+[node name="BGMMenu" type="AudioStreamPlayer2D" parent="." unique_id=101509065]
+position = Vector2(222, 223)
+stream = ExtResource("4_nvoj8")
+autoplay = true
+bus = &"BGM"
 
 [connection signal="pressed" from="back" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

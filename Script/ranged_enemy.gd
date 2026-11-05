@@ -26,17 +26,17 @@ var pending_fire := false
 @export var move_speed := 60.0
 
 @export_group("Jarak")
-@export var trigger_range := 200  # di luar jarak ini, musuh diam
-@export var min_distance := 15 # lebih dekat dari ini, musuh mundur
+@export var trigger_range := 200
+@export var min_distance := 15
 @export var melee_distance := 50    
-@export var max_distance := 100   # lebih jauh dari ini, musuh mendekat
+@export var max_distance := 100 
 
 
 @export_group("Ranged Attack")
 @export var orb_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var attack_cooldown := 3
-@export var fire_chance := 0.4       # peluang memilih api (0.0 sampai 1.0)
+@export var fire_chance := 0.4   
 @export var orbs_per_cast := 3
 @export var orb_spread_degrees := 15.0
 
@@ -63,8 +63,8 @@ var has_arena := false
 
 
 func _ready() -> void:
-	add_to_group("Enemy")             # agar bisa dipukul player
-	add_to_group("NoContactDamage")   # agar tidak melukai player saat bersentuhan
+	add_to_group("Enemy")           
+	add_to_group("NoContactDamage")   
 	player = get_tree().get_first_node_in_group("Player")
 	
 	var bounds := get_tree().get_first_node_in_group("ArenaBounds")
@@ -77,6 +77,10 @@ func _ready() -> void:
 	stun_gauge.stunned.connect(_on_stunned)
 	hitbox.monitoring = false
 	hitbox.area_entered.connect(_on_hitbox_area_entered)
+	
+	if has_node("HealthBar"):
+		$HealthBar.max_value = health
+		$HealthBar.value = health
 
 
 func _physics_process(delta: float) -> void:
@@ -118,12 +122,10 @@ func _state_combat(delta: float) -> void:
 		change_state(State.IDLE)
 		return
 
-	# Keep distance
 	if dist < min_distance:
 		move_dir = -to_player.normalized()
 	elif dist > max_distance:
 		move_dir = to_player.normalized()
-	
 	
 	attack_timer -= delta
 	if attack_timer <= 0.0:
@@ -156,7 +158,7 @@ func _state_stun() -> void:
 
 func _start_punch(to_player: Vector2) -> void:
 	attack_timer = punch_cooldown
-	hitbox.rotation = to_player.angle()   # aim is locked here, so you can sidestep
+	hitbox.rotation = to_player.angle()
 	change_state(State.PUNCH)
 
 
@@ -190,12 +192,10 @@ func _state_recover() -> void:
 		change_state(State.COMBAT)
 
 
-# Called by the player's _parry()
 func on_parried(parrier: Node2D, stun_power: float) -> void:
 	knockback = (global_position - parrier.global_position).normalized() * 250.0
-	change_state(State.RECOVER)    # the attack is interrupted first...
-	stun_gauge.add(stun_power)     # ...then, if the gauge fills, STUN overrides RECOVER
-
+	change_state(State.RECOVER)    
+	stun_gauge.add(stun_power)  
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.name != "Hurtbox":
@@ -210,15 +210,15 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 func change_state(new_state: State) -> void:
 	state = new_state
 	state_time = 0.0
-	hitbox.set_deferred("monitoring", false)   # leaving any state switches the punch hitbox off
+	hitbox.set_deferred("monitoring", false)
 	match new_state:
 		State.CAST:
-			sprite.self_modulate = Color(0.8, 0.5, 1.0)   # purple: spell wind-up
+			sprite.self_modulate = Color(0.8, 0.5, 1.0)
 		State.PUNCH:
-			sprite.self_modulate = Color.YELLOW           # punch wind-up
+			sprite.self_modulate = Color.YELLOW
 		State.STUN:
 			hit_count = 0
-			sprite.self_modulate = Color(0.5, 0.8, 1.0)   # light blue
+			sprite.self_modulate = Color(0.5, 0.8, 1.0)
 		_:
 			sprite.self_modulate = Color.WHITE
 
@@ -243,7 +243,7 @@ func _cast_orbs() -> void:
 func _cast_fire() -> void:
 	var fire = fire_scene.instantiate()
 	get_tree().current_scene.add_child(fire)
-	fire.global_position = player.global_position  # lokasi dikunci saat cast
+	fire.global_position = player.global_position
 
 
 func _teleport() -> void:
@@ -260,10 +260,9 @@ func _teleport() -> void:
 		var dist := randf_range(teleport_min_distance, teleport_max_distance)
 		var target := player.global_position + Vector2.RIGHT.rotated(angle) * dist
 
-		# Tolak titik di luar batas map
 		if has_arena and not arena_rect.has_point(target):
 			continue
-		# Tolak titik di dalam tembok
+		
 		if test_move(Transform2D(0.0, target), Vector2.ZERO):
 			continue
 
@@ -271,15 +270,18 @@ func _teleport() -> void:
 		break
 
 	attack_timer = maxf(attack_timer, 1.0)
-	change_state(State.COMBAT)   # a teleport cancels any attack in progress
+	change_state(State.COMBAT)  
 
 
-# Dipanggil otomatis oleh player saat Hitbox mengenai Hurtbox musuh ini
+
 func take_hit(damage: int, stun_power: float, knockback_force: Vector2, _attacker: Node2D) -> void:
 	if state == State.STUN:
 		damage = int(damage * STUN_DAMAGE_BONUS)
 	health -= damage
 	knockback = knockback_force
+
+	if has_node("HealthBar"):
+		$HealthBar.value = health
 
 	modulate = Color.RED
 	create_tween().tween_property(self, "modulate", Color.WHITE, 0.15)
@@ -289,11 +291,11 @@ func take_hit(damage: int, stun_power: float, knockback_force: Vector2, _attacke
 		queue_free()
 		return
 
-	stun_gauge.add(stun_power)   # may switch to STUN right here
+	stun_gauge.add(stun_power)   
 	if state == State.STUN:
-		return                    # stunned enemies never teleport
+		return                    
 
 	hit_count += 1
 	if hit_count >= hits_to_teleport:
 		hit_count = 0
-		_teleport.call_deferred()  # deferred so it's safe from physics callbacks
+		_teleport.call_deferred()

@@ -17,3 +17,10 @@ offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_fmoiy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3quw2")
 max_value = 200.0
+
+[node name="KillCounter" type="Label" parent="." unique_id=413035617]
+offset_left = 974.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 34
