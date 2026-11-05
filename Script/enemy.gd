@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 @export var SPEED := 20
 @export var acceleration := 2000
 @export var health := 50
@@ -31,11 +33,12 @@ func take_damage(amount: int, knockback_force := Vector2.ZERO):
 	if is_dead : return
 	health -= amount
 	knockback = knockback_force
-	modulate = Color.RED
-	await get_tree().create_timer(0.1).timeout
-	modulate = Color.WHITE
 	
 	if health <= 0:
 		is_dead = true
+		died.emit()
 		queue_free()
 	
+	modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
